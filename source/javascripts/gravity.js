@@ -8,10 +8,6 @@ var demoArea = document.querySelector("#gravity-demo"),
       WIDTH = demoArea.offsetWidth,
       HEIGHT = WIDTH * 0.4286,
       pauseFlag =  0; // Flag for checking if game should be paused.
-  
-
-  Particle.prototype = new System;
-
 
   /*********************
     FUNCTIONS 
