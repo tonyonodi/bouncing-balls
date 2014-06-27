@@ -1,6 +1,3 @@
-// inherit from system
-Particle.prototype = new System;
-
 function Particle(pos, detail) {
   
   // Vector properties of particle.
