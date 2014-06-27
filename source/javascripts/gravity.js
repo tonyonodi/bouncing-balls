@@ -1,5 +1,5 @@
-var demoArea = $("#script-demo"),
-      WIDTH = demoArea.width() - 17,
+var demoArea = document.querySelector("#gravity-demo"),
+      WIDTH = demoArea.offsetWidth,
       HEIGHT = WIDTH * 0.4286,
       pauseFlag =  0; // Flag for checking if game should be paused.
 
@@ -369,7 +369,7 @@ scene = new THREE.Scene();
   // Create a renderer and add it to the DOM.
   renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setSize(WIDTH, HEIGHT);
-  demoArea.append( renderer.domElement );
+  demoArea.appendChild( renderer.domElement );
   
 
   // Create a camera, zoom it out from the model a bit, and add it to the scene.

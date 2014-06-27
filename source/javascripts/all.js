@@ -1,1 +1,2 @@
-//= require_tree .
+//= require "three.min"
+//= require "OrbitControls"
