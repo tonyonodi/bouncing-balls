@@ -91,38 +91,6 @@ var demoArea = document.querySelector("#gravity-demo"),
 
   }
 
-
-  function getClickLocation(screenX, screenY) {
-
-    // This function takes the coordinates of an on screen click and translates
-    // that into a line containing all possible locations of the click. It then
-    // finds the point at which that line intersects the plane of the floor.
-
-    var pointOnVector = [0,0, WIDTH], // Position of camera - used as a point on the line.
-        pointOnPlane = [0, -(HEIGHT + (2 * system.rad)) / 2, 0] // Point under origin.
-        normalToPlane = [0, 1, 0]; // Vector that is normal to the plane under origin.
-
-    // Find the size of the screen in 3d space.
-    var nearFulcrumHeight = Math.tan( Math.PI / 8 );
-    var nearFulcrumWidth = nearFulcrumHeight * (WIDTH / HEIGHT);
-    
-    // Point on screen clicked in 3d space.
-    var clickInSpace = [screenX * nearFulcrumWidth, screenY * nearFulcrumHeight, WIDTH - 1]; 
-    // Subtract point on screen from camera vector.
-    var lineVector = subVect( clickInSpace , pointOnVector ); 
-
-    // Find distance along line from camera that intersection occurs.
-    var intersectionDistance = subVect( pointOnPlane, pointOnVector );
-        intersectionDistance = dotVect( intersectionDistance, normalToPlane );
-        intersectionDistance = intersectionDistance / dotVect( lineVector, normalToPlane );
-
-    // Now find the point in space at which the intersection occurs.
-    var intersectionPoint = multiplyVect( lineVector, intersectionDistance   );
-        intersectionPoint = addVect( intersectionPoint, pointOnPlane );
-
-    return  pointOnPlane;
-  }
-
   function explosion() {
     
     // Randomly generate a place for explosion to occur.
