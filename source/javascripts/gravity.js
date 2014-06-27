@@ -8,8 +8,6 @@ var demoArea = document.querySelector("#gravity-demo"),
       WIDTH = demoArea.offsetWidth,
       HEIGHT = WIDTH * 0.4286,
       pauseFlag =  0; // Flag for checking if game should be paused.
-
-
   
 
   Particle.prototype = new System;
@@ -202,15 +200,7 @@ scene = new THREE.Scene();
 
   // Add a click listener.
   demoArea.click(function() {
-
     explosion();
-    /*
-    // Position of click on screen relative to centre.
-    var screenX = (event.pageX - (( WIDTH - 5) / 2)) / (( WIDTH - 5) / 2),
-        screenY = (event.pageY - (( HEIGHT - 5) / 2) ) / (( HEIGHT - 5) / -2);
-    
-    // Translates click to location on floor.
-    alert( getClickLocation(screenX, screenY) );*/
   });
 
   /*******************
