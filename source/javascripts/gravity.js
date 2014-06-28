@@ -55,9 +55,7 @@ scene.add(light);
 //controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // Add a click listener.
-demoArea.click(function() {
-  explosion();
-});
+demoArea.addEventListener('click', explosion, false)
 
 /*******************
 CREATE SYSTEM!
